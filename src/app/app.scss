@@ -14,3 +14,40 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// Color de Barra de Menu
+
+//Android
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+    color: #fff;
+}
+
+//IOS
+.bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{
+    color: #fff;
+}
+
+.toolbar-md {
+    padding: 4px;
+    min-height: 91px;
+}
+
+.toolbar-ios {
+    padding: 4px;
+    min-height: 91px !important;
+}
+
+.toolbar-md2 {
+    padding: 4px;
+    min-height: 175px !important;
+}
+
+.toolbar-ios2 {
+    padding: 4px;
+    min-height: 175px;
+}
+
+.hd-ctr{
+    padding-left: 5.8rem;
+    font-size: 1.9rem;
+}

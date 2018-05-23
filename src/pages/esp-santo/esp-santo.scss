@@ -1,0 +1,37 @@
+page-esp-santo {
+    .toolbar-background {
+        background-image: url('../assets/imgs/hablame-15.png')!important;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .bg-image {
+        background-image: url('../assets/imgs/hablame-02.png') !important;
+        background-repeat: no-repeat !important;
+        background-position: left !important;
+        background-size: 100% 100% !important;
+    }
+
+    .h4-bg-img{
+        background-image: url('../assets/imgs/hablame-10.png')!important;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .h4-br{
+        font-size: 1.8rem;
+        font-weight: 400;
+        padding-left: 2rem;
+        padding-top: 1rem;
+    }
+
+    .btn-ctr{
+        text-align: center;
+        
+    }
+
+    .btn-ctr > button{
+        color: #5ec4e6;
+        border-color: #CAECF7 !important;
+    }
+}

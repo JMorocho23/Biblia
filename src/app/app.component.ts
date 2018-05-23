@@ -4,7 +4,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+// import { ListPage } from '../pages/list/list';
+import { AcercaDePage } from '../pages/acerca-de/acerca-de';
+import { PadrePage } from '../pages/padre/padre';
+import { HijoPage } from '../pages/hijo/hijo';
+import { EspSantoPage } from '../pages/esp-santo/esp-santo';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -21,8 +26,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Inicio', component: HomePage },
+      // { title: 'List', component: ListPage },
+      { title: 'Padre', component: PadrePage },
+      { title: 'Hijo', component: HijoPage },
+      { title: 'Espíritu Santo', component: EspSantoPage },
+      { title: 'Acerca De', component: AcercaDePage } 
     ];
 
   }
