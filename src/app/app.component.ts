@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -21,7 +21,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(private menuCtrl: MenuController, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -50,4 +50,30 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+  home() {
+    this.nav.setRoot(HomePage);
+    this.menuCtrl.close();
+  }
+
+  padre() {
+    this.nav.setRoot(PadrePage);
+    this.menuCtrl.close();
+  } 
+  
+  hijo() {
+    this.nav.setRoot(HijoPage);
+    this.menuCtrl.close();
+  } 
+  
+  esp() {
+    this.nav.setRoot(EspSantoPage);
+    this.menuCtrl.close();
+  }   
+  
+  acerca() {
+    this.nav.setRoot(AcercaDePage);
+    this.menuCtrl.close();
+    }
+    
 }

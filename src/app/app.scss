@@ -27,6 +27,46 @@
     color: #fff;
 }
 
+//Menu CSS
+.menu-bg .toolbar-background-md{
+    background-image: url('../assets/imgs/menu-03.png')!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu-txt  .toolbar-title-md{
+    text-align: right;
+    color:#fff !important;
+}
+
+.icon-text{
+    margin-left: 15px !important;
+}
+
+.menu-icons {
+    width: 2.5rem;
+    height: 2.5rem;
+    vertical-align: text-bottom;
+}
+
+.menu-logo {
+    width: 12rem;
+    display: block;
+    margin: auto;
+    height: 6rem;
+    margin-top: 6vh;
+}
+
+
+
+.list-md .item-block .item-inner {
+    border-bottom: 1px solid#84C7E6 !important;
+}
+
+
+
+
+// CSS General
 .toolbar-md {
     padding: 4px;
     min-height: 91px;

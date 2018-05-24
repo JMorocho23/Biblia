@@ -1,16 +1,41 @@
 <ion-menu [content]="content">
-  <ion-header>
+  <ion-header no-border class="menu-bg">
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title class="menu-txt">Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <!-- <button class="mnu-btn" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
+      </button> -->
+
+      <button class="mnu-btn" menuClose ion-item (tap)="home()">
+          <img src="./assets/imgs/menu-07.png" class="menu-icons"  />
+          <span class="icon-text">Inicio</span>  
+      </button>
+      <button class="mnu-btn" menuClose ion-item (tap)="padre()">
+          <img src="./assets/imgs/menu-06.png" class="menu-icons"  />
+          <span class="icon-text">Padre</span>  
+      </button>
+      <button class="mnu-btn" menuClose ion-item (tap)="hijo()">
+          <img src="./assets/imgs/menu-05.png" class="menu-icons"  />
+          <span class="icon-text">Hijo</span>  
+      </button>
+      <button class="mnu-btn" menuClose ion-item (tap)="esp()">
+          <img src="./assets/imgs/menu-04.png" class="menu-icons"  />
+          <span class="icon-text">Espíritu Santo</span>  
+      </button>
+      <button class="mnu-btn" menuClose ion-item (tap)="acerca()">
+          <img src="./assets/imgs/menu-08.png" class="menu-icons"  />
+          <span class="icon-text">Acerca De</span>  
       </button>
     </ion-list>
+
+    <a (tap)="home()">
+        <img src="./assets/imgs/menu-02.png" class="menu-logo"/>
+    </a>
   </ion-content>
 
 </ion-menu>
