@@ -11,6 +11,7 @@ import { HijoPage } from '../pages/hijo/hijo';
 import { EspSantoPage } from '../pages/esp-santo/esp-santo';
 
 
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -21,7 +22,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(private menuCtrl: MenuController, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor( private menuCtrl: MenuController, public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -33,7 +34,8 @@ export class MyApp {
       { title: 'Espíritu Santo', component: EspSantoPage },
       { title: 'Acerca De', component: AcercaDePage } 
     ];
-
+ 
+   
   }
 
   initializeApp() {
@@ -42,6 +44,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+     
     });
   }
 
