@@ -46,7 +46,7 @@ export class HomePage {
   }
 
   ngOnInit(){
-    // this.refDB();
+    this.refDB();
   }
 
   refDB() {
