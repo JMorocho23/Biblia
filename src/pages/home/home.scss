@@ -1,5 +1,25 @@
 
 page-home {
+
+
+
+    //Fonts
+    .robotoRegularTitulos {
+        font-family: RNS-Sanz !important;
+        color: #083957;
+    }
+    .robotoRegularTexto {
+        font-family: RNS-Sanz !important;
+        color: rgb(32, 32, 32);
+        font-size: 2.4rem !important;
+    }
+
+
+
+
+
+
+
     .toolbar-background {
         background-image: url('../assets/imgs/hablame-03.png')!important;
         background-size: cover;
@@ -17,17 +37,26 @@ page-home {
     .blue-img{
         width: 8rem;
         height: 2rem;
+        padding-top: 5px !important;
+  height: 23px !important;
+  width: 58px !important;
     }
 
     .btn-col{
         padding-right: 0px;
         padding-left: 16px;
+        
+
     }
 
     .txt-col{
-        background-color: #f6f6f6;
+        //background-color: #f6f6f6;
         padding-right: 0px;
         padding-left: 0px;
+        border-radius: 10px;
+        background: #f6f6f6;
+        
+        
     }
 
     .btn-col2{
@@ -35,7 +64,7 @@ page-home {
         padding-left: 0px;
     }
     .h4-br{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         font-weight: 400;
     }
 

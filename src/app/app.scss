@@ -15,6 +15,21 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+
+
+
+//Instalar fonts
+@font-face{
+    font-family: RNS-Sanz;
+    src: url('../assets/fonts/Roboto-Regular.woff') format('woff2');
+}
+
+.robotoRegularTexto {
+    font-family: RNS-Sanz !important;
+    color: black;
+}
+
+
 // Color de Barra de Menu
 
 //Android
