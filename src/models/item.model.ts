@@ -1,5 +1,6 @@
-export interface Item{
-    capitulo: string;
-    versiculo: string;
-    versiculo_text: string;
+export interface Cita{
+    id?: string;
+    capitulo?: number;
+    versiculo?: number;
+    versiculo_text?: string;
 }

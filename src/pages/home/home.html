@@ -10,107 +10,88 @@
 
 <ion-content padding class="bg-image no-scroll">
   <ion-row>
-    
-      <img class="blue-img" src="./assets/imgs/blue-01.png" 
-      style="">
+
+    <img class="blue-img" src="./assets/imgs/blue-01.png" style="">
 
 
-     <h2 class="robotoRegularTitulos" style="margin-top: 0px !important;
+    <h2 class="robotoRegularTitulos" style="margin-top: 0px !important;
      margin-bottom: 0px !important;
-     padding-left: 5px !important;"
-     >PADRE</h2>
+     padding-left: 5px !important;">PADRE</h2>
   </ion-row>
- 
-
- <!-- " 
-
--->
 
   <ion-row>
-      <ion-col class="txt-col robotoRegularTexto" col-8 *ngFor="let item of Rnd; let i = index" style="
-      left: 50px;
-  ">
-          <h4 padding class="h4-br" style="padding-bottom: 0px;padding-top: 12px;">{{ Rnd }}</h4>
-      </ion-col>
-      <ion-col col-2 align-self-center class="btn-col">
-        <a (tap)="this.refDB()">
-          <button ion-button color="light" round small clear class="btn-img1" style="right: 185px;" ></button>
-          </a>
-      </ion-col>
-      
-      <ion-col col-2 align-self-center class="btn-col2" style="
-      right: 18px;
-  ">
-          <button ion-button color="light" round small clear class="btn-img2"></button>
-        </ion-col>
-    </ion-row>
+    <ion-col class="txt-col robotoRegularTexto" col-8 style="left: 50px;">
+      <h4 padding class="h4-br" style="padding-bottom: 0px;padding-top: 12px;">{{ cita.versiculo_text }}</h4>
+    </ion-col>
+    <ion-col col-2 align-self-center class="btn-col">
+      <a (tap)="this.showCita()">
+        <button ion-button color="light" round small clear class="btn-img1" style="right: 185px;"></button>
+      </a>
+    </ion-col>
+
+    <ion-col col-2 align-self-center class="btn-col2" style="right: 18px;">
+      <button ion-button color="light" round small clear class="btn-img2"></button>
+    </ion-col>
+  </ion-row>
 
   <br>
   <ion-row>
-   
-      <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
-   
-      <h2 class="robotoRegularTitulos" style="margin-top: 0px !important;
+
+    <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
+
+    <h2 class="robotoRegularTitulos" style="margin-top: 0px !important;
       margin-bottom: 0px !important;
       padding-left: 5px !important;">HIJO</h2>
- 
+
   </ion-row>
 
   <ion-row>
-      <ion-col class="txt-col robotoRegularTexto" col-8 *ngFor="let item of Rnd; let i = index" style="
-      left: 50px;
-  ">
-          <h4 padding class="h4-br" style="padding-bottom: 0px;padding-top: 12px;">{{ Rnd }}</h4>
-      </ion-col>
-      <ion-col col-2 align-self-center class="btn-col">
-        <a (tap)="this.refDB()">
-          <button ion-button color="light" round small clear class="btn-img1" style="right: 185px;" ></button>
-          </a>
-      </ion-col>
-      
-      <ion-col col-2 align-self-center class="btn-col2" style="
-      right: 18px;
-  ">
-          <button ion-button color="light" round small clear class="btn-img2"></button>
-        </ion-col>
-    </ion-row>
+    <ion-col class="txt-col robotoRegularTexto" col-8 style="left: 50px;">
+      <h4 padding class="h4-br" style="padding-bottom: 0px;padding-top: 12px;">{{ cita.versiculo_text }}</h4>
+    </ion-col>
+    <ion-col col-2 align-self-center class="btn-col">
+      <a (tap)="this.showCita()">
+        <button ion-button color="light" round small clear class="btn-img1" style="right: 185px;"></button>
+      </a>
+    </ion-col>
+
+    <ion-col col-2 align-self-center class="btn-col2" style="right: 18px;">
+      <button ion-button color="light" round small clear class="btn-img2"></button>
+    </ion-col>
+  </ion-row>
 
   <br>
   <ion-row>
-    
-      <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
-    
-      <h2 class="robotoRegularTitulos" style="margin-top: 0px !important;
+
+    <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
+
+    <h2 class="robotoRegularTitulos" style="margin-top: 0px !important;
       margin-bottom: 0px !important;
       padding-left: 5px !important;">ESPÍRITU SANTO</h2>
-   
+
   </ion-row>
 
   <ion-row>
-      <ion-col class="txt-col robotoRegularTexto" col-8 *ngFor="let item of Rnd; let i = index" style="
-      left: 50px;
-  ">
-          <h4 padding class="h4-br" style="padding-bottom: 0px;padding-top: 12px;">{{ Rnd }}</h4>
-      </ion-col>
-      <ion-col col-2 align-self-center class="btn-col">
-        <a (tap)="this.refDB()">
-          <button ion-button color="light" round small clear class="btn-img1" style="right: 185px;" ></button>
-          </a>
-      </ion-col>
-      
-      <ion-col col-2 align-self-center class="btn-col2" style="
-      right: 18px;
-  ">
-          <button ion-button color="light" round small clear class="btn-img2"></button>
-        </ion-col>
-    </ion-row>
+    <ion-col class="txt-col robotoRegularTexto" col-8 style="left: 50px;">
+      <h4 padding class="h4-br" style="padding-bottom: 0px;padding-top: 12px;">{{ cita.versiculo_text }}</h4>
+    </ion-col>
+    <ion-col col-2 align-self-center class="btn-col">
+      <a (tap)="this.showCita()">
+        <button ion-button color="light" round small clear class="btn-img1" style="right: 185px;"></button>
+      </a>
+    </ion-col>
 
-    <br>
-    <ion-row justify-content-center>
-      <ion-col class="btn-ctr">
-          <button ion-button round outline>ACERCA DE</button>
-      </ion-col>
-    </ion-row>
+    <ion-col col-2 align-self-center class="btn-col2" style="right: 18px;">
+      <button ion-button color="light" round small clear class="btn-img2"></button>
+    </ion-col>
+  </ion-row>
+
+  <br>
+  <ion-row justify-content-center>
+    <ion-col class="btn-ctr">
+      <button ion-button round outline>ACERCA DE</button>
+    </ion-col>
+  </ion-row>
 
 
 

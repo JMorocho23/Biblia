@@ -1,20 +1,54 @@
 import { Injectable } from "@angular/core";
-import { AngularFireDatabase } from "angularfire2/database";
-import { Item } from './../models/item.model'
+import { AngularFirestore, AngularFirestoreCollection, 
+AngularFirestoreDocument } from "angularfire2/firestore";
 import { Observable } from 'rxjs/Observable';
+
+import { Cita } from './../models/item.model'
+
 
 @Injectable()
 export class BibliaListService{
 
-     items: Observable<Item[]>;
-    private bibliaListref = this.db.list<Item>('biblia-list');
+    citasCollection: AngularFirestoreCollection<Cita>;
+    clientDoc: AngularFirestoreDocument<Cita>;
+    citas: Observable<Cita[]>;
+    cita: Observable<Cita>;
 
-    constructor(private db: AngularFireDatabase){
-
+    constructor(private afs: AngularFirestore){
+        
+        this.citasCollection = this.afs.collection('Juan');
     }
 
-    getBibliaList(){
-        return this.bibliaListref;
+    getCitas(): Observable<Cita[]>{
+
+        this.citas = this.citasCollection.snapshotChanges().map(changes =>{
+            return changes.map(action => {
+                const data =action.payload.doc.data() as Cita;
+                data.id = action.payload.doc.id;
+                return data;
+            });
+        });
+
+        return this.citas;
     }
+
+    getCita(id: string): Observable<Cita> {
+        this.clientDoc = this.afs.doc<Cita>(`Juan/${id}`);
+        this.cita = this.clientDoc.snapshotChanges().map(action => {
+          if(action.payload.exists === false){
+            return null; 
+          } else {
+            const data = action.payload.data() as Cita;
+            data.id = action.payload.id;
+            return data;
+          }
+        });
+        return this.cita;
+
+    }
+ 
+  
+
+
     
 }
