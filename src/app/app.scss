@@ -49,10 +49,22 @@
     background-repeat: no-repeat;
 }
 
-.menu-txt  .toolbar-title-md{
+.menu-bg .toolbar-background-ios{
+    background-image: url('../assets/imgs/menu-03.png')!important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menu-txt .toolbar-title-md{
     text-align: right;
     color:#fff !important;
 }
+
+.menu-txt .toolbar-title-ios{
+    text-align: left;
+    color:#fff !important;
+}
+
 
 .icon-text{
     margin-left: 15px !important;
