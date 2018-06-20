@@ -19,7 +19,8 @@ import { EspSantoPage } from '../pages/esp-santo/esp-santo';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FIREBASE_CONF } from './firebase.credentials';
-import { BibliaListService } from '../services/biblia-list.service';
+import { Hijo } from '../services/Hijo.service';
+import { EspirituSanto } from '../services/EspirituSanto.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { BibliaListService } from '../services/biblia-list.service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BibliaListService
+    Hijo,
+    EspirituSanto
   ]
 })
 export class AppModule {}

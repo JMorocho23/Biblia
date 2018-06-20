@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Cita } from '../../models/item.model';
-import { BibliaListService } from '../../services/biblia-list.service';
+import { Hijo } from '../../services/Hijo.service';
 
 
 @IonicPage()
@@ -13,7 +13,7 @@ import { BibliaListService } from '../../services/biblia-list.service';
 export class PadrePage {
   citas: Cita[];
 
-  constructor(private bibliaService: BibliaListService, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private HijoService: Hijo, public navCtrl: NavController, public navParams: NavParams) {
 
   }
 

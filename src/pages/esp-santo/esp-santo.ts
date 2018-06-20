@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the EspSantoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Cita } from '../../models/item.model';
+import { EspirituSanto  } from '../../services/EspirituSanto.service';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EspSantoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  citas: Cita[];
+  cap:any;
+  doc:any;
+
+  constructor(private esService: EspirituSanto, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EspSantoPage');
+    this.doc = this.esService.doc
+    this.cap = this.esService.cap
+
+    this.esService.getCapsES().subscribe(citas =>{ 
+      this.citas = citas
+      console.log(this.citas.length)
+    });
   }
 
 }
