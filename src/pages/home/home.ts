@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
+import { HijoPage } from '../hijo/hijo';
 import { Cita } from '../../models/item.model';
 import { BibliaListService } from '../../services/biblia-list.service';
 
@@ -9,62 +10,96 @@ import { BibliaListService } from '../../services/biblia-list.service';
 })
 export class HomePage {
 
- /*  Variables Viejas
-  Mateo = [];
-  Elegido = [];
-  Marcos = [];
-  Lucas = [];
-  Juan = [];
-  Rnd = ['Hi im empty'];
-  Rn2: number = 0;
-  Nvers: number = 0;
-  Evangelio: string = "";
-  Capitulo: number = 0;
-  Versiculo: number = 0;
-  Cita: string = "";*/
-  
-  Rn1: number = 0;
-  NVersiculo: string = "Empty";
+  EvangelioH: string = "";
+  EvangelioES: string = "";
 
 
-  citas: Cita[];
-  cita: Cita= {
-    capitulo: 0,
-    versiculo: 0,
-    versiculo_text: ''
+  CapituloH: number = 0;
+  CapituloES: number = 0;
+
+
+
+  Versiculo: string = "";
+  NVersiculo: number = 0;
+  CitaPadre: string = "";
+  CitaHijo: string = "";
+  CitaES: string = "";
+
+  citaPadre: Cita = {
+    Capitulo: 0,
+    Versiculo: 0,
+    Versiculo_text: ''
+  };
+
+  citaHijo: Cita = {
+    Capitulo: 0,
+    Versiculo: 0,
+    Versiculo_text: ''
+  };
+
+  citaES: Cita = {
+    Capitulo: 0,
+    Versiculo: 0,
+    Versiculo_text: ''
   };
 
   constructor(private bibliaService: BibliaListService, public navCtrl: NavController, platform: Platform) {
-   
+
   }
 
-  ngOnInit(){
-    this.showCita();
+  ngOnInit() {
+    this.showCitaHijo();
+    this.showCitaES();
   }
+/*
+  showCitaPadre() {
+    this.bibliaService.getCitaHijo().subscribe(citas => {
 
-  showCita(){
-
-    this.Rn1 = this.rndCita(this.Rn1);
-    this.NVersiculo = this.Rn1.toString();
-
-    this.bibliaService.getCita(this.NVersiculo).subscribe(citas =>{ 
-      this.cita = citas
-      console.log("Var " + this.cita.versiculo_text);
-     // this.Capitulo = this.citas.capitulo;
-     // this.Versiculo = this.cita.versiculo;
+      this.citaPadre = citas
+      console.log("Var-Padre: " + this.citaHijo.Versiculo_text);
+      this.Capitulo = this.citaPadre.Capitulo;
+      this.Versiculo = this.citaPadre.Versiculo_text;
+      this.NVersiculo = this.citaPadre.Versiculo;
+      this.Evangelio = this.bibliaService.getAbrH();
+      this.CitaPadre = this.Versiculo + " (" + this.Evangelio + " " + this.Capitulo + ", " + this.NVersiculo + ")";
     });
-    
-    //this.bibliaService.getCita(this.NVersiculo).subscribe(cita => this.Capitulo = cita.capitulo);
-    console.log("Rn1 : " + this.Rn1);
+  }*/
+
+
+  showCitaHijo() {
+    this.bibliaService.getCitaHijo().subscribe(citas => {
+
+      this.citaHijo = citas
+      console.log("Var-Hijo: " + this.citaHijo.Versiculo_text);
+      this.CapituloH = this.citaHijo.Capitulo;
+      this.Versiculo = this.citaHijo.Versiculo_text;
+      this.NVersiculo = this.citaHijo.Versiculo;
+      this.EvangelioH = this.bibliaService.getAbrH();
+      this.CitaHijo = this.Versiculo + " (" + this.EvangelioH + " " + this.CapituloH + ", " + this.NVersiculo + ")";
+      
+      this.bibliaService.setCapsHijo(this.CapituloH);
+     
+    });
+  }
+
+  showCitaES() {
+    this.bibliaService.getCitaES().subscribe(citas => {
+
+      this.citaES = citas
+      console.log("Var-ES: " + this.citaES.Versiculo_text);
+      this.CapituloES = this.citaES.Capitulo;
+      this.Versiculo = this.citaES.Versiculo_text;
+      this.NVersiculo = this.citaES.Versiculo;
+      this.EvangelioES = this.bibliaService.getAbrES();
+      this.CitaES = this.Versiculo + " (" + this.EvangelioES + " " + this.CapituloES + ", " + this.NVersiculo + ")";
+    });
   }
 
 
-  rndCita(res: number): number{
-
-    res= Math.floor((Math.random() * 879) + 1);
-    console.log("Result: " + res);
-    return res;
-
+  clickHijo() {
+    this.navCtrl.push(HijoPage);
   }
+
+
 
 }

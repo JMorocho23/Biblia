@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Cita } from '../../models/item.model';
+import { BibliaListService } from '../../services/biblia-list.service';
 
-/**
- * Generated class for the HijoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -14,12 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'hijo.html',
 })
 export class HijoPage {
+  citas: Cita[];
+  cap:any;
+  doc:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private bibliaService: BibliaListService, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HijoPage');
+    this.doc = this.bibliaService.doc
+    this.cap = this.bibliaService.cap
+
+    this.bibliaService.getCapsHijo().subscribe(citas =>{ 
+      this.citas = citas
+      console.log(this.citas.length)
+    });
   }
 
 }

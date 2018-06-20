@@ -1,6 +1,6 @@
 export interface Cita{
     id?: string;
-    capitulo?: number;
-    versiculo?: number;
-    versiculo_text?: string;
+    Capitulo?: number;
+    Versiculo?: number;
+    Versiculo_text?: string;
 }

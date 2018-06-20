@@ -20,17 +20,19 @@
 
   <ion-row>
     <ion-col col-2 align-self-center class="btn-col">
-      <a (tap)="this.showCita()">
+      <a (tap)="this.showCitaPadre()">
         <button ion-button color="light" round small clear class="btn-img1"></button>
       </a>
     </ion-col>
 
     <ion-col class="txt-col robotoRegularTexto" col-8>
-      <h4 padding class="h4-br">{{ cita.versiculo_text }}</h4>
+      <h4 padding class="h4-br">{{ this.CitaPadre }}</h4>
     </ion-col>
 
     <ion-col col-2 align-self-center class="btn-col2">
-      <button ion-button color="light" round small clear class="btn-img2"></button>
+      <a (tap)="this.clickHijo()">
+        <button ion-button color="light" round small clear class="btn-img2"></button>
+      </a>
     </ion-col>
   </ion-row>
 
@@ -47,17 +49,19 @@
 
   <ion-row>
     <ion-col col-2 align-self-center class="btn-col">
-      <a (tap)="this.showCita()">
+      <a (tap)="this.showCitaHijo()">
         <button ion-button color="light" round small clear class="btn-img1"></button>
       </a>
     </ion-col>
 
     <ion-col class="txt-col robotoRegularTexto" col-8>
-      <h4 padding class="h4-br">{{ cita.versiculo_text }}</h4>
+      <h4 padding class="h4-br">{{ this.CitaHijo }}</h4>
     </ion-col>
 
     <ion-col col-2 align-self-center class="btn-col2">
-      <button ion-button color="light" round small clear class="btn-img2"></button>
+        <a (tap)="this.clickHijo()">
+            <button ion-button color="light" round small clear class="btn-img2"></button>
+          </a>
     </ion-col>
   </ion-row>
 
@@ -75,17 +79,19 @@
 
   <ion-row>
     <ion-col col-2 align-self-center class="btn-col">
-      <a (tap)="this.showCita()">
+      <a (tap)="this.showCitaES()">
         <button ion-button color="light" round small clear class="btn-img1"></button>
       </a>
     </ion-col>
 
     <ion-col class="txt-col robotoRegularTexto" col-8>
-      <h4 padding class="h4-br">{{ cita.versiculo_text }}</h4>
+      <h4 padding class="h4-br">{{ this.CitaES }}</h4>
     </ion-col>
 
     <ion-col col-2 align-self-center class="btn-col2">
-      <button ion-button color="light" round small clear class="btn-img2"></button>
+      <a (tap)="this.clickHijo()">
+        <button ion-button color="light" round small clear class="btn-img2"></button>
+      </a>
     </ion-col>
   </ion-row>
 

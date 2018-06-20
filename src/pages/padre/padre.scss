@@ -5,6 +5,22 @@ page-padre {
         background-repeat: no-repeat;
     }
 
+    .hr-cust{
+        background-color: #000;
+    }
+
+    .h3-tit{
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .h4-num{
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #9BD8E6;
+        text-align: center;
+    }
+
     .bg-image {
         background-image: url('../assets/imgs/hablame-02.png') !important;
         background-repeat: no-repeat !important;
@@ -22,8 +38,10 @@ page-padre {
         font-size: 1.8rem;
         font-weight: 400;
         padding-left: 2rem;
-        padding-top: 0rem;
+        padding-top: 1rem;
     }
+
+
 
     .btn-ctr{
         text-align: center;
