@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore, AngularFirestoreCollection, 
 AngularFirestoreDocument } from "angularfire2/firestore";
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { Cita } from './../models/item.model'
 
 
@@ -39,7 +41,8 @@ export class Hijo {
         console.log("id de cita: " + id);
 
         this.clientDoc = this.afs.doc<Cita>(`${evg}/${id}`);
-        this.cita = this.clientDoc.snapshotChanges().map(action => {
+
+        this.cita = this.clientDoc.snapshotChanges().pipe(map(action => {
             if (action.payload.exists === false) {
                 return null;
             } else {
@@ -47,7 +50,8 @@ export class Hijo {
                 data.id = action.payload.id;
                 return data;
             }
-        });
+        }));
+
         return this.cita;
 
     }
@@ -84,13 +88,13 @@ export class Hijo {
         this.citasCollection = this.afs.collection(`${this.doc}`,
             ref => ref.where('Capitulo', '==', this.cap).orderBy('Versiculo'));
 
-        this.citas = this.citasCollection.snapshotChanges().map(changes => {
-            return changes.map(action => {
-                const data = action.payload.doc.data() as Cita;
-                data.id = action.payload.doc.id;
-                return data;
-            });
-        });
+            this.citas = this.citasCollection.snapshotChanges().pipe(map(changes => {
+                return changes.map(action => {
+                    const data = action.payload.doc.data() as Cita;
+                    data.id = action.payload.doc.id;
+                    return data;
+                });
+            }));
         return this.citas;
 
     }

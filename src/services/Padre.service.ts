@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore, AngularFirestoreCollection, 
 AngularFirestoreDocument } from "angularfire2/firestore";
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+;
 import { Cita } from './../models/item.model'
 
 
@@ -30,8 +32,8 @@ export class Padre{
             'Is', 'Jr','Ba', 'Ez', 'Dn', 'Os', 'Jl', 'Am', 'Ab', 'Jon', 'Mi', 'Na','Ha', 'So', 'Ag', 'Za', 
             'Ml'];
 
-    padreLength = [1510, 1214, 858, 1289, 958, 658, 618, 85, 811, 696, 815, 718, 942, 822, 280, 405, 248,
-             340, 177, 924, 555, 2508, 116, 153, 1068, 914, 221,  435, 1380, 1290, 1350, 212, 1271, 
+    padreLength = [1509, 1213, 857, 1288, 957, 6570, 617, 84, 810, 695, 814, 717, 941, 821, 279, 404, 247,
+             339, 176, 924, 555, 2508, 116, 153, 1068, 914, 221,  435, 1379, 1290, 1350, 212, 1271, 
              462, 196, 72, 145, 20, 47, 104, 46, 55, 52, 38, 200, 54];
 
 
@@ -53,7 +55,8 @@ export class Padre{
         console.log("id de cita: " + id);
 
         this.clientDoc = this.afs.doc<Cita>(`${evg}/${id}`);
-        this.cita = this.clientDoc.snapshotChanges().map(action => {
+
+        this.cita = this.clientDoc.snapshotChanges().pipe(map(action => {
             if (action.payload.exists === false) {
                 return null;
             } else {
@@ -61,7 +64,7 @@ export class Padre{
                 data.id = action.payload.id;
                 return data;
             }
-        });
+        }));
         return this.cita;
 
     }
@@ -98,13 +101,13 @@ export class Padre{
         this.citasCollection = this.afs.collection(`${this.doc}`,
             ref => ref.where('Capitulo', '==', this.cap).orderBy('Versiculo'));
 
-        this.citas = this.citasCollection.snapshotChanges().map(changes => {
+        this.citas = this.citasCollection.snapshotChanges().pipe(map(changes => {
             return changes.map(action => {
                 const data = action.payload.doc.data() as Cita;
                 data.id = action.payload.doc.id;
                 return data;
             });
-        });
+        }));
         return this.citas;
 
     }
