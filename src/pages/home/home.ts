@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { HijoPage } from '../hijo/hijo';
 import { EspSantoPage } from '../esp-santo/esp-santo'
+import { PadrePage } from '../padre/padre';
 import { Cita } from '../../models/item.model';
 import { Hijo } from '../../services/Hijo.service';
 import { EspirituSanto } from '../../services/EspirituSanto.service';
+import { Padre } from '../../services/Padre.service';
 
 @Component({
   selector: 'page-home',
@@ -14,10 +16,12 @@ export class HomePage {
 
   EvangelioH: string = "";
   EvangelioES: string = "";
+  EvangelioP: string = "";
 
 
   CapituloH: number = 0;
   CapituloES: number = 0;
+  CapituloP: number = 0;
 
   
   Versiculo: string = "";
@@ -44,27 +48,31 @@ export class HomePage {
     Versiculo_text: ''
   };
 
-  constructor(private esService: EspirituSanto, private HijoService: Hijo, public navCtrl: NavController, platform: Platform) {
+  constructor(private esService: EspirituSanto, private HijoService: Hijo, private PadreService: Padre, public navCtrl: NavController, platform: Platform) {
 
   }
 
   ngOnInit() {
     this.showCitaHijo();
     this.showCitaES();
+    this.showCitaPadre();
   }
-  /*
+
+  
     showCitaPadre() {
-      this.bibliaService.getCitaHijo().subscribe(citas => {
+      this.PadreService.getCitaPadre().subscribe(citas => {
   
         this.citaPadre = citas
         console.log("Var-Padre: " + this.citaHijo.Versiculo_text);
-        this.Capitulo = this.citaPadre.Capitulo;
+        this.CapituloP = this.citaPadre.Capitulo;
         this.Versiculo = this.citaPadre.Versiculo_text;
         this.NVersiculo = this.citaPadre.Versiculo;
-        this.Evangelio = this.bibliaService.getAbrH();
-        this.CitaPadre = this.Versiculo + " (" + this.Evangelio + " " + this.Capitulo + ", " + this.NVersiculo + ")";
+        this.EvangelioP = this.PadreService.getAbrPadre();
+        this.CitaPadre = this.Versiculo + " (" + this.EvangelioP + " " + this.CapituloP + ", " + this.NVersiculo + ")";
+
+        this.PadreService.setCapsPadre(this.CapituloP);
       });
-    }*/
+    }
 
 
   showCitaHijo() {
@@ -105,6 +113,10 @@ export class HomePage {
 
   clickES() {
     this.navCtrl.push(EspSantoPage);
+  }
+
+  clickPadre() {
+    this.navCtrl.push(PadrePage);
   }
 
 

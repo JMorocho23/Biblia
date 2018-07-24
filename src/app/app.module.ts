@@ -21,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { FIREBASE_CONF } from './firebase.credentials';
 import { Hijo } from '../services/Hijo.service';
 import { EspirituSanto } from '../services/EspirituSanto.service';
+import { Padre } from '../services/Padre.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { EspirituSanto } from '../services/EspirituSanto.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Hijo,
-    EspirituSanto
+    EspirituSanto,
+    Padre
   ]
 })
 export class AppModule {}

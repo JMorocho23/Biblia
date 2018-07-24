@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from "angularfire2/firestore";
+import { AngularFirestore, AngularFirestoreCollection, 
+AngularFirestoreDocument } from "angularfire2/firestore";
 import { Observable } from 'rxjs/Observable';
 import { Cita } from './../models/item.model'
 
 
 @Injectable()
-export class EspirituSanto {
+export class Padre{
 
     citasCollection: AngularFirestoreCollection<Cita>;
     clientDoc: AngularFirestoreDocument<Cita>;
@@ -17,20 +18,34 @@ export class EspirituSanto {
     doc: any;
     cap: any;
 
-    es = ['Hechos', '1SanJuan', '2SanJuan', '3SanJuan', 'SanJudas', '1Tesalonisenses', '2Tesalonisenses', '1Timoteo', '2Timoteo', 'Apocalipsis', 'Colosenses', 'Efesios', 'Filemon', 'Filepenses', 'Galatas', 'Hebreos', 'Romanos', 'Santiago', 'Tito','1Pedro','2Pedro','1Corintios','2Corintios'];
-    esAbr = ['Hch', '1 Jn', '2 Jn', '3 Jn', 'Judas', '1 Ts', '2 Ts', '1 Tm', '2 Tm', 'Ap', 'Col', 'Ef', 'Flm', 'Flp', 'Ga', 'Hb', 'Rm', 'St', 'Tt','1 P','2 P','1 Co','2 Co'];
-    esLength = [1002, 105, 13, 15, 25, 89, 47, 113, 83, 405, 95, 155, 25, 104, 149, 303, 431, 108, 46, 105, 61, 437, 256];
+    padre = ['Génesis', 'Éxodo', 'Levítico', 'Números', 'Deuteronomio','Josué', 'Jueces', 'Rut', '1Samuel', 
+            '2Samuel','1Reyes', '2Reyes', '1Crónicas', '2Crónicas', 'Esdras', 'Nehemías', 'Tobías', 'Judit', 
+            'Ester', '1Macabeos', '2Macabeos', 'Salmos', 'Cantar', 'Lamentaciones', 'Job', 'Proverbios',
+            'Eclesiastes', 'Sabiduría', 'Eclesiastico', 'Isaías', 'Jeremías','Baruc', 'Ezequiel', 'Daniel', 
+            'Oseas', 'Joel', 'Amós', 'Abdías', 'Jonás', 'Miqueas', 'Nahúm', 'Habacuc', 'Sofonías', 
+            'Ageo', 'Zacarías', 'Malaquías'];
+
+    padreAbr = ['Gn', 'Ex', 'Lv', 'Nm', 'Dt', 'Jos', 'Jc', 'Rt', '1S', '2S','1R', '2R', '1Cro', '2Cro', 
+            'Esd', 'Ne', 'Tb', 'Jdt', 'Est', '1M', '2M', 'Sal', 'Ct', 'Lm', 'Jb', 'Pr','Qo', 'Sb', 'Si', 
+            'Is', 'Jr','Ba', 'Ez', 'Dn', 'Os', 'Jl', 'Am', 'Ab', 'Jon', 'Mi', 'Na','Ha', 'So', 'Ag', 'Za', 
+            'Ml'];
+
+    padreLength = [1510, 1214, 858, 1289, 958, 658, 618, 85, 811, 696, 815, 718, 942, 822, 280, 405, 248,
+             340, 177, 924, 555, 2508, 116, 153, 1068, 914, 221,  435, 1380, 1290, 1350, 212, 1271, 
+             462, 196, 72, 145, 20, 47, 104, 46, 55, 52, 38, 200, 54];
+
+
 
     constructor(private afs: AngularFirestore) {
+
     }
 
-
-    getCitaES(): Observable<Cita> {
-        console.log("***Espiritu Santo***");
-        this.pos = this.rndPHES(this.es);
-        var evg = this.es[this.pos];
+    getCitaPadre(): Observable<Cita> {
+        console.log("***Padre***");
+        this.pos = this.rndPHES(this.padre);
+        var evg = this.padre[this.pos];
         this.doc = evg;
-        var size = this.esLength[this.pos];
+        var size = this.padreLength[this.pos];
         console.log("Se cita de:" + evg);
         console.log("Tam de: " + size);
 
@@ -50,7 +65,7 @@ export class EspirituSanto {
         return this.cita;
 
     }
-
+    
     rndPHES(a: string[]): number {
         var res;
         res = Math.floor((Math.random() * a.length));
@@ -62,24 +77,23 @@ export class EspirituSanto {
         return res;
     }
 
-    getAbrES(): string {
+    getAbrPadre(): string {
         var res_evg;
 
-        res_evg = this.esAbr[this.pos];
+        res_evg = this.padreAbr[this.pos];
 
         return res_evg;
     }
 
-
-    setCapsES(cap: number) {
+    setCapsPadre(cap: number) {
         console.log("Evg: " + this.doc);
         console.log("Cap: " + cap);
         this.cap = cap;
     }
 
-    getCapsES(): Observable<Cita[]> {
-        console.log("Evg-ES: " + this.doc);
-        console.log("Cap-ES: " + this.cap);
+    getCapsPadre(): Observable<Cita[]> {
+        console.log("Evg-Padre: " + this.doc);
+        console.log("Cap-Padre: " + this.cap);
 
         this.citasCollection = this.afs.collection(`${this.doc}`,
             ref => ref.where('Capitulo', '==', this.cap).orderBy('Versiculo'));
@@ -94,7 +108,5 @@ export class EspirituSanto {
         return this.citas;
 
     }
-
-
 
 }

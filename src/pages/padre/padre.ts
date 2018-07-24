@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Cita } from '../../models/item.model';
-import { Hijo } from '../../services/Hijo.service';
+import { Padre  } from '../../services/Padre.service';
 
 
 @IonicPage()
@@ -12,17 +12,22 @@ import { Hijo } from '../../services/Hijo.service';
 
 export class PadrePage {
   citas: Cita[];
+  cap:any;
+  doc:any;
 
-  constructor(private HijoService: Hijo, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private PadreService: Padre, public navCtrl: NavController, public navParams: NavParams) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PadrePage');
-   /* this.bibliaService.getCitas().subscribe(citas =>{ 
+    this.doc = this.PadreService.doc
+    this.cap = this.PadreService.cap
+
+    this.PadreService.getCapsPadre().subscribe(citas =>{ 
       this.citas = citas
       console.log(this.citas.length)
-    });*/
+    });
   }
 
 }
