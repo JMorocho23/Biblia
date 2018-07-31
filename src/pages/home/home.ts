@@ -119,6 +119,13 @@ export class HomePage {
     this.navCtrl.push(PadrePage);
   }
 
+  clickR(){
+    this.showCitaHijo();
+    this.showCitaES();
+    this.showCitaPadre();    
+  }
+
+
 
 
 }

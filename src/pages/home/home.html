@@ -10,7 +10,7 @@
 
 <ion-content padding class="bg-image no-scroll">
   <ion-row>
-    <ion-col col-3>
+    <ion-col col-3 text-right>
       <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
     </ion-col>
     <ion-col align-self-center>
@@ -19,13 +19,13 @@
   </ion-row>
 
   <ion-row>
-    <ion-col col-2 align-self-center class="btn-col">
+    <ion-col col-2 align-self-center text-right class="btn-col">
       <a (tap)="this.showCitaPadre()">
         <button ion-button color="light" round small clear class="btn-img1"></button>
       </a>
     </ion-col>
 
-    <ion-col class="txt-col robotoRegularTexto" col-8>
+    <ion-col class="txt-col robotoRegularTexto" col-8 >
       <h4 padding class="h4-br">{{ this.CitaPadre }}</h4>
     </ion-col>
 
@@ -39,7 +39,7 @@
   <br>
 
   <ion-row>
-    <ion-col col-3>
+    <ion-col col-3 text-right>
       <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
     </ion-col>
     <ion-col align-self-center>
@@ -48,7 +48,7 @@
   </ion-row>
 
   <ion-row>
-    <ion-col col-2 align-self-center class="btn-col">
+    <ion-col col-2 align-self-center text-right class="btn-col">
       <a (tap)="this.showCitaHijo()">
         <button ion-button color="light" round small clear class="btn-img1"></button>
       </a>
@@ -68,7 +68,7 @@
   <br>
 
   <ion-row>
-    <ion-col col-3>
+    <ion-col col-3 text-right>
       <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
     </ion-col>
     <ion-col align-self-center>
@@ -78,7 +78,7 @@
 
 
   <ion-row>
-    <ion-col col-2 align-self-center class="btn-col">
+    <ion-col col-2 align-self-center text-right class="btn-col">
       <a (tap)="this.showCitaES()">
         <button ion-button color="light" round small clear class="btn-img1"></button>
       </a>
@@ -98,11 +98,12 @@
   <br>
   <ion-row justify-content-center>
     <ion-col class="btn-ctr">
-      <button ion-button round outline>ACERCA DE</button>
+      <a (tap)="this.clickR()">
+        <button ion-button round outline>Nuevo</button>
+      </a>
     </ion-col>
   </ion-row>
 
 
 
 </ion-content>
-`
