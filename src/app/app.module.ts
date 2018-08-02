@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 
 
 import { AngularFireModule } from 'angularfire2';
@@ -56,7 +58,8 @@ import { Padre } from '../services/Padre.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Hijo,
     EspirituSanto,
-    Padre
+    Padre,,
+    ScreenOrientation
   ]
 })
 export class AppModule {}
