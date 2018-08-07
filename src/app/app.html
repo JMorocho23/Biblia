@@ -10,10 +10,13 @@
       <!-- <button class="mnu-btn" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button> -->
-
+      <button class="mnu-btn" menuClose ion-item (tap)="acerca()">
+          <img src="./assets/imgs/menu-08.png" class="menu-icons"  />
+          <span class="icon-text robotoRegularTexto">Historia</span>  
+      </button>
       <button class="mnu-btn" menuClose ion-item (tap)="home()">
           <img src="./assets/imgs/menu-07.png" class="menu-icons"  />
-          <span class="icon-text robotoRegularTexto">Inicio</span>  
+          <span class="icon-text robotoRegularTexto">Nuevo Mensaje</span>  
       </button>
       <button class="mnu-btn" menuClose ion-item (tap)="padre()">
           <img src="./assets/imgs/menu-06.png" class="menu-icons"  />
@@ -27,10 +30,7 @@
           <img src="./assets/imgs/menu-04.png" class="menu-icons"  />
           <span class="icon-text robotoRegularTexto">Espíritu Santo</span>  
       </button>
-      <button class="mnu-btn" menuClose ion-item (tap)="acerca()">
-          <img src="./assets/imgs/menu-08.png" class="menu-icons"  />
-          <span class="icon-text robotoRegularTexto">Acerca De</span>  
-      </button>
+
     </ion-list>
 
     <a (tap)="home()">

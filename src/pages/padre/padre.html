@@ -5,42 +5,34 @@
   Ionic pages and navigation.
 -->
 <ion-header no-border class="header-bg-image">
-    <ion-navbar class="toolbar-md2 toolbar-ios2">
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-          </button>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar class="toolbar-md2 toolbar-ios2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
 
 
 <ion-content padding class="bg-image">
-  
+
   <ion-row>
     <ion-col>
       <h3 class="h3-tit">{{ this.doc }}, Capitulo {{ this.cap }}</h3>
       <hr class="hr-cust">
-      
+
     </ion-col>
   </ion-row>
 
 
-  <ion-row  *ngFor="let cita of citas">
+  <ion-row *ngFor="let cita of citas">
     <ion-col col-12>
-        <h4 class="h4-num">{{ cita.Versiculo }}</h4>
+      <h4 class="h4-num">{{ cita.Versiculo }}</h4>
     </ion-col>
     <ion-col class="h4-bg-img">
       <h4 class="h4-br">
-          {{ cita.Versiculo_text }}
-        </h4>
+        {{ cita.Versiculo_text }}
+      </h4>
     </ion-col>
   </ion-row>
   <br>
-
-    
-
-    <ion-row justify-content-center>
-        <ion-col class="btn-ctr">
-            <button ion-button round outline>Acerca De</button>
-        </ion-col>
-      </ion-row>
 </ion-content>

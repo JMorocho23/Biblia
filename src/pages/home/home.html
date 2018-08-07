@@ -2,7 +2,6 @@
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
-      <!-- <h2 class="hd-ctr">Dios Hablame</h2> -->
     </button>
   </ion-navbar>
 </ion-header>
@@ -10,28 +9,34 @@
 
 <ion-content padding class="bg-image no-scroll">
   <ion-row>
-    <ion-col col-3 text-right>
+    <ion-col col-3 text-left>
       <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
     </ion-col>
     <ion-col align-self-center>
-      <h2 class="robotoRegularTitulos">PADRE</h2>
+      <h3 class="robotoRegularTitulos">MENSAJE DEL PADRE</h3>
     </ion-col>
   </ion-row>
 
   <ion-row>
-    <ion-col col-2 align-self-center text-right class="btn-col">
-      <a (tap)="this.showCitaPadre()">
-        <button ion-button color="light" round small clear class="btn-img1"></button>
-      </a>
-    </ion-col>
-
-    <ion-col class="txt-col robotoRegularTexto" col-8 >
+    <ion-col col-12 class="txt-col robotoRegularTexto" col-8>
       <h4 padding class="h4-br">{{ this.CitaPadre }}</h4>
     </ion-col>
-
-    <ion-col col-2 align-self-center class="btn-col2">
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 align-self-center text-center class="col-ref">
+      <a (tap)="this.showCitaPadre()">
+        <button ion-button round small outline icon-start class="btn-w">
+          <ion-icon name="refresh"></ion-icon>
+          Otro Mensaje
+        </button>
+      </a>
+    </ion-col>
+    <ion-col col-6 align-self-center text-center>
       <a (tap)="this.clickPadre()">
-        <button ion-button color="light" round small clear class="btn-img2"></button>
+        <button ion-button round outline small icon-start>
+          <ion-icon name="add"></ion-icon>
+          Ampliar Mensaje
+        </button>
       </a>
     </ion-col>
   </ion-row>
@@ -39,58 +44,70 @@
   <br>
 
   <ion-row>
-    <ion-col col-3 text-right>
+    <ion-col col-3 text-left>
       <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
     </ion-col>
     <ion-col align-self-center>
-      <h2 class="robotoRegularTitulos">HIJO</h2>
+      <h2 class="robotoRegularTitulos">MENSAJE DEL HIJO</h2>
     </ion-col>
   </ion-row>
 
   <ion-row>
-    <ion-col col-2 align-self-center text-right class="btn-col">
-      <a (tap)="this.showCitaHijo()">
-        <button ion-button color="light" round small clear class="btn-img1"></button>
-      </a>
-    </ion-col>
-
-    <ion-col class="txt-col robotoRegularTexto" col-8>
+    <ion-col col-12 class="txt-col robotoRegularTexto" col-8>
       <h4 padding class="h4-br">{{ this.CitaHijo }}</h4>
     </ion-col>
-
-    <ion-col col-2 align-self-center class="btn-col2">
-        <a (tap)="this.clickHijo()">
-            <button ion-button color="light" round small clear class="btn-img2"></button>
-          </a>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 align-self-center text-center class="col-ref">
+      <a (tap)="this.showCitaHijo()">
+        <button ion-button round small outline icon-start class="btn-w">
+          <ion-icon name="refresh"></ion-icon>
+          Otro Mensaje
+        </button>
+      </a>
+    </ion-col>
+    <ion-col col-6 align-self-center text-center>
+      <a (tap)="this.clickHijo()">
+        <button ion-button round outline small icon-start>
+          <ion-icon name="add"></ion-icon>
+          Ampliar Mensaje
+        </button>
+      </a>
     </ion-col>
   </ion-row>
 
   <br>
 
   <ion-row>
-    <ion-col col-3 text-right>
+    <ion-col col-3 text-left align-self-center>
       <img class="blue-img" src="./assets/imgs/blue-01.png" alt="">
     </ion-col>
     <ion-col align-self-center>
-      <h2 class="robotoRegularTitulos">ESPÍRITU SANTO</h2>
+      <h2 class="robotoRegularTitulos">MENSAJE DEL ESPÍRITU SANTO</h2>
     </ion-col>
   </ion-row>
 
 
   <ion-row>
-    <ion-col col-2 align-self-center text-right class="btn-col">
-      <a (tap)="this.showCitaES()">
-        <button ion-button color="light" round small clear class="btn-img1"></button>
-      </a>
-    </ion-col>
-
-    <ion-col class="txt-col robotoRegularTexto" col-8>
+    <ion-col col-12 class="txt-col robotoRegularTexto" col-8>
       <h4 padding class="h4-br">{{ this.CitaES }}</h4>
     </ion-col>
-
-    <ion-col col-2 align-self-center class="btn-col2">
+  </ion-row>
+  <ion-row>
+    <ion-col col-6 align-self-center text-center class="col-ref">
+      <a (tap)="this.showCitaES()">
+        <button ion-button round small outline icon-start class="btn-w">
+          <ion-icon name="refresh"></ion-icon>
+          Otro Mensaje
+        </button>
+      </a>
+    </ion-col>
+    <ion-col col-6 align-self-center text-center>
       <a (tap)="this.clickES()">
-        <button ion-button color="light" round small clear class="btn-img2"></button>
+        <button ion-button round outline small icon-start>
+          <ion-icon name="add"></ion-icon>
+          Ampliar Mensaje
+        </button>
       </a>
     </ion-col>
   </ion-row>
@@ -99,7 +116,7 @@
   <ion-row justify-content-center>
     <ion-col class="btn-ctr">
       <a (tap)="this.clickR()">
-        <button ion-button round outline>Nuevo</button>
+        <button ion-button round outline>3 Nuevos Mensajes</button>
       </a>
     </ion-col>
   </ion-row>

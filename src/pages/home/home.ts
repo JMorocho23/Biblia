@@ -49,16 +49,13 @@ export class HomePage {
   };
 
   constructor(private esService: EspirituSanto, private HijoService: Hijo, private PadreService: Padre, public navCtrl: NavController, platform: Platform) {
-
   }
 
   ngOnInit() {
-    this.showCitaHijo();
-    this.showCitaES();
-    this.showCitaPadre();
+    this.clickR();
   }
-
   
+
     showCitaPadre() {
       this.PadreService.getCitaPadre().subscribe(citas => {
   

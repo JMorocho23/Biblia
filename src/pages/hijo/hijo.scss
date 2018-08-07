@@ -40,24 +40,12 @@ page-hijo {
         padding-left: 2rem;
         padding-top: 1rem;
     }
-
-
-
-    .btn-ctr{
-        text-align: center;
-        
-    }
-
-    .btn-ctr > button{
-        color: #5ec4e6;
-        border-color: #CAECF7 !important;
-    }
-
+    
     .bar-button-menutoggle-md ion-icon {
         margin-top: -6rem !important;
     }
 
     .bar-button-menutoggle-ios ion-icon {
-        margin-top: -6rem !important;
+        transform: translateY(-2rem) !important;
     }
 }

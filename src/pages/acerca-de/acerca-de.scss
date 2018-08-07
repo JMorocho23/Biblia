@@ -1,6 +1,6 @@
 page-acerca-de {
     .toolbar-background {
-        background-image: url('../assets/imgs/hablame-15.png')!important;
+        background-image: url('../assets/imgs/hablame-16.png')!important;
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -32,6 +32,6 @@ page-acerca-de {
     }
     
     .bar-button-menutoggle-ios ion-icon {
-        margin-top: -6rem !important;
+        transform: translateY(-2rem) !important;
     }
 }

@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { HomePage } from '../pages/home/home';
-// import { ListPage } from '../pages/list/list';
 import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { PadrePage } from '../pages/padre/padre';
 import { HijoPage } from '../pages/hijo/hijo';
@@ -45,6 +44,7 @@ export class MyApp {
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
      
     });
   }
@@ -61,22 +61,22 @@ export class MyApp {
   }
 
   padre() {
-    this.nav.setRoot(PadrePage);
+    this.nav.push(PadrePage);
     this.menuCtrl.close();
   } 
   
   hijo() {
-    this.nav.setRoot(HijoPage);
+    this.nav.push(HijoPage);
     this.menuCtrl.close();
   } 
   
   esp() {
-    this.nav.setRoot(EspSantoPage);
+    this.nav.push(EspSantoPage);
     this.menuCtrl.close();
   }   
   
   acerca() {
-    this.nav.setRoot(AcercaDePage);
+    this.nav.push(AcercaDePage);
     this.menuCtrl.close();
     }
     

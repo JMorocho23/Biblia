@@ -37,7 +37,9 @@ import { Padre } from '../services/Padre.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      backButtonText: 'Atrás'
+    }),
     AngularFireModule.initializeApp(FIREBASE_CONF),
     AngularFireDatabaseModule,
     AngularFirestoreModule
@@ -58,7 +60,7 @@ import { Padre } from '../services/Padre.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Hijo,
     EspirituSanto,
-    Padre,,
+    Padre,
     ScreenOrientation
   ]
 })

@@ -6,6 +6,7 @@ page-home {
         font-family: RNS-Sanz !important;
         color: #083957;
         margin-top: 0px !important;
+        font-size: 2rem !important;
     }
 
     .robotoRegularTexto {
@@ -15,7 +16,6 @@ page-home {
  
     }
 
-
     .toolbar-background {
         background-image: url('../assets/imgs/hablame-03.png')!important;
         background-size: cover;
@@ -23,7 +23,7 @@ page-home {
     }
 
     .bg-image {
-        background-image: url('../assets/imgs/hablame-02.png') !important;
+        background-image: url('../assets/imgs/hablame-022.png') !important;
         background-repeat: no-repeat !important;
         background-position: left !important;
          background-size: 100% 100% !important;
@@ -38,11 +38,6 @@ page-home {
         width: 58px !important;
     }
 
-    .btn-col{
-        padding-right: 4px;
-        padding-left: 16px;
-    }
-
     .txt-col{
         padding-right: 0px;
         padding-left: 0px;
@@ -50,32 +45,19 @@ page-home {
         background: #f6f6f6;
     }
 
-    .btn-col2{
-        padding-right: 18px;
-        padding-left: 0px;
-    }
     .h4-br{
         font-size: 1.4rem;
         font-weight: 400;
     }
     
-    
-    .btn-img1{
-        background-image: url('../assets/imgs/hablame-07.png') !important;
-        background-repeat: no-repeat !important;
-        background-size: contain !important;
-        left: 2.4rem;
-        z-index: 1;
-    }
-    .btn-img2{
-        background-image: url('../assets/imgs/hablame-08.png') !important;
-        background-repeat: no-repeat !important;
-        background-size: contain !important;
-        right: 1.8rem;
+    .button-round-md {
+        padding: 0 1.2rem !important;
+        color: #5ec4e6;
+        border-color: #CAECF7 !important;
     }
 
-    .button-round-md {
-        padding: 0 1.5rem !important;
+    .button-round-ios {
+        padding: 0 1.2rem !important;
         color: #5ec4e6;
         border-color: #CAECF7 !important;
     }
@@ -96,5 +78,17 @@ page-home {
 
     .bar-button-menutoggle-ios ion-icon {
         margin-top: 1rem !important;
+    }
+
+    .button-small-md {
+        font-size: 1.1rem;
+    }
+
+    .btn-w{
+        width:129px;
+    }
+    .col-ref{
+        padding-left: 0px;
+        padding-right: 10px
     }
 }
