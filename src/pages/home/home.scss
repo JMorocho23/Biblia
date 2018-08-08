@@ -6,7 +6,8 @@ page-home {
         font-family: RNS-Sanz !important;
         color: #083957;
         margin-top: 0px !important;
-        font-size: 2rem !important;
+        font-size: 1.84rem !important;
+        padding-top: 5px;
     }
 
     .robotoRegularTexto {
@@ -46,20 +47,21 @@ page-home {
     }
 
     .h4-br{
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         font-weight: 400;
     }
     
     .button-round-md {
         padding: 0 1.2rem !important;
-        color: #5ec4e6;
-        border-color: #CAECF7 !important;
+        color: #60C4E5;
+        border-color: #60C4E5 !important;
     }
 
     .button-round-ios {
         padding: 0 1.2rem !important;
-        color: #5ec4e6;
-        border-color: #CAECF7 !important;
+        color: #60C4E5;
+        font-weight: 600 !important;
+        border-color: #60C4E5 !important;
     }
 
     .btn-ctr{

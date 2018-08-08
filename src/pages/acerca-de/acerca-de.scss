@@ -13,11 +13,13 @@ page-acerca-de {
     }
 
     .p-bg-img{
-        background-image: url('../assets/imgs/fondo-08.jpg')!important;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom
+        background-color: #F6F6F6;
+        border-top: 1rem solid #30B4DA;
+        border-bottom: 2rem solid #30B4DA;
+        border-left: 0.2rem dashed #C1C1C1;
+        border-right: 0.2rem dashed #C1C1C1
     }
+
     .container {
         padding-left: 2rem;
         padding-right: 2rem;
